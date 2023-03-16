@@ -1,0 +1,120 @@
+{% extends 'main.html' %}
+
+    {% block content %}
+    <main class="page cv-page">
+        <section class="portfolio-block block-intro border-bottom">
+            
+        </section>
+        <section class="portfolio-block cv">
+            <div class="container">
+                <div class="work-experience group">
+                    <div class="heading">
+                        <h2 class="text-center">Work Experience</h2>
+                    </div>
+                    <div class="item" style="text-align: justify;">
+                        {% for work in works %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>{{ work.title}}</h3>
+                                <h4 class="organization">{{ work.company}}</h4>
+                            </div>
+                            <div class="col-md-6"><span class="period">{{ work.start_date}}- {{ work.end_date}}</span></div>
+                        </div>
+                        <p class="text-muted">{{ work.description }}</p>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+                <div class="education group">
+                    <div class="heading">
+                        <h2 class="text-center">Education</h2>
+                    </div>
+                    <div class="item">
+                        {% if educations %}
+                            {% for edu in educations %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>{{ edu.title }}</h3>
+                                        <h4 class="organization">{{ edu.education_level }}</h4>
+                                    </div>
+                                    <div class="col-6"><span class="period">
+                                        {{ edu.start_date}}-{% if edu.end_date %}
+                                        {{ edu.end_date}}{% else %}<i>Present</i>{% endif %}</span>
+                                    </div>
+                                </div>
+                                <p class="text-muted"> {{ edu.description }}</p>
+                            {% endfor %}
+                        {% else %}<p class="text-center">No education</p>
+                        {% endif %}
+                        </div>
+                    
+                </div>
+                <div class="group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills portfolio-info-card">
+                                <h2>Skills</h2>
+                                <h3>HTML <span style="float: right;">100%</span></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                        <span class="visually-hidden">100%</span></div>
+                                </div>
+                                <h3>CSS <span style="float: right; width: 28%;">70%</span></h3></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="visually-hidden">100%</span></div>
+                                </div>
+                                <h3>Boostrap <span style="float: right; width: 30%;">60%</span></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"><span class="visually-hidden">100%</span></div>
+                                </div>
+                                <h3>Django <span style="float: right; width: 40%;">60%</span></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"><span class="visually-hidden">90%</span></div>
+                                </div>
+                                
+                                <h3>Python <span style="float: right; width: 50%;">60%</span></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"><span class="visually-hidden">80%</span></div>
+                                </div>
+                                
+                                <h3>JavaScript <span style="float: right; width: 50%;">60%</span></h3>
+                                <div class="progress">
+                                    <div class="progress-bar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"><span class="visually-hidden">80%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-info portfolio-info-card">
+                                <h2>Contact Info</h2>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-android-calendar icon"></i></div>
+                                    <div class="col-9"><span>10/10/1990</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-person icon"></i></div>
+                                    <div class="col-9"><span>Nurudeen Najeem</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-ios-telephone icon"></i></div>
+                                    <div class="col-9"><span>+234 8139612757</span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1"><i class="icon ion-at icon"></i></div>
+                                    <div class="col-9"><span>najeemnurudeen7@gmail.com</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hobbies group">
+                    <div class="heading">
+                        <h2 class="text-center">Hobbies</h2>
+                    </div>
+                    <p class="text-center text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras risus ligula, iaculis ut metus sit amet, luctus pharetra mauris. Aliquam purus felis, pretium vel pretium vitae, dapibus sodales ante. Suspendisse potenti. Duis nunc eros.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+    {% block content %}
+    <main class="page hire-me-page">
+        <section class="portfolio-block hire-me">
+            <div class="container">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                <div class="heading">
+                    <h2>Hire Me</h2>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3"><label class="form-label" for="name">Name</label><input class="form-control" type="text" id="name" name="name"></div>
+                    <div class="mb-3"><label class="form-label" for="phone">Phone number</label><input class="form-control" name="phone_number" type="tel" id="email"></div>
+
+                    <div class="mb-3"><label class="form-label"  for="subject">Subject</label><select class="form-select" id="subject" name="subject">
+                            <optgroup label="This is a group">
+                                <option value="Do you want to hire"  selected=""> Do you want to hire</option>
+                                <option value="I need a website" > I need a website</option>
+                                <option value="I need a web development" > I need a web development</option>
+                            </optgroup>
+                        </select></div>
+                    <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email" name="email"></div>
+                    <div class="mb-3"><label class="form-label" for="message">Message</label><textarea class="form-control" id="message" name="message"></textarea></div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6"><label class="form-label" for="hire-date">Date</label><input class="form-control" id="hire-date" type="date" name="date"></div>
+                            <div class="col-md-6 button"><button class="btn btn-primary d-block w-100" type="submit">Hire Me</button></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+   
+    {% endblock %}
+   
